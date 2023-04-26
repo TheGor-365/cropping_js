@@ -17,3 +17,30 @@
 a {
   text-decoration: none !important;
 }
+
+.image {
+  display: flex;
+  width: 500px;
+  height: 600px;
+  max-width: 100%;
+}
+
+.image-container > cropper-canvas {
+  width: 500px;
+  height: 600px;
+  max-width: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+#source {
+  margin: 0 5px;
+}
+
+#output {
+  margin: 0 5px;
+}
