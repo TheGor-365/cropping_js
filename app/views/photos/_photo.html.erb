@@ -2,17 +2,16 @@
   <% image_url = photo.image.attached? ? url_for(photo.image) : "" %>
   <% cropped_image_url = photo.cropped_image.attached? ? url_for(photo.cropped_image) : "" %>
 
-  <p>
-    <strong>
-      Name:
-    </strong>
+  <h4 class="text-muted mb-3">
     <%= photo.name %>
-  </p>
+  </h4>
 
   <%= content_tag(:div, "", data: { controller: "images", images_url: image_url, images_id: photo.id }, class: 'container') do %>
     <div class="image-container">
       <%= image_tag(image_url, class: 'image', id: 'source', data: { images_target: 'source' }) %>
-      <%= button_to "Crop", '#', data: { action: 'click->images#click', images_target: 'cropButton' }, method: :get %>
+      <div class="mt-3">
+        <%= button_to "Crop", '#', data: { action: 'click->images#click', images_target: 'cropButton' }, method: :get, class: "btn btn-sm btn-success px-5" %>
+      </div>
     </div>
 
     <div class="image-container">
